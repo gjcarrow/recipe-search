@@ -1,0 +1,31 @@
+.recipe {
+  border-radius: 15px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #F5F4F1;
+  padding-bottom: 10px;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  font-variant: small-caps;
+  padding: 10px 5px;
+}
+
+.prepBtn {
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+  background: #B86B2A;
+  display: block;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 15px auto 0;
+  border-radius: 10px;
+}

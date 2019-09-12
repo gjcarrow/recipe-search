@@ -1,0 +1,31 @@
+.recipe-card h1 {
+  font-size: 2rem;
+  color: #343434;
+  font-family: 'overpass';
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.recipe-card-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-card-top {
+  display:flex;
+  flex-direction: column;
+  flex-grow: 2.5;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-direction: column;
+  font-family: papyrus;
+  align-items: flex-start;
+}
+
+.ingredient-list * {
+  margin: 0;
+  padding: 0;
+}
+

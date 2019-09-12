@@ -1,33 +1,382 @@
+@font-face {
+  font-family: 'Smooth Papyrus Demo';
+  src: url('fonts/Smooth_Papyrus_Demo.ttf');
+}
+
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%
+}
+
+*, :after, :before {
+  box-sizing: inherit
+}
+
+:after, :before {
+  text-decoration: inherit;
+  vertical-align: inherit
+}
+
+* {
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0
+}
+
+hr {
+  overflow: visible
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block
+}
+
+summary {
+  display: list-item
+}
+
+small {
+  font-size: 80%
+}
+
+[hidden], template {
+  display: none
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  text-decoration: none
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects
+}
+
+a:active, a:hover {
+  outline-width: 0
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace
+}
+
+b, strong {
+  font-weight: bolder
+}
+
+dfn {
+  font-style: italic
+}
+
+mark {
+  background-color: #ff0;
+  color: #000
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+
+sub {
+  bottom: -.25em
+}
+
+sup {
+  top: -.5em
+}
+
+input {
+  border-radius: 0
+}
+
+[type=button], [type=reset], [type=submit] [role=button], button {
+  cursor: pointer
+}
+
+[disabled] {
+  cursor: default
+}
+
+[type=number] {
+  width: auto
+}
+
+[type=search] {
+  -webkit-appearance: textfield
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical
+}
+
+button, input, optgroup, select, textarea {
+  font: inherit
+}
+
+optgroup {
+  font-weight: 700
+}
+
+button {
+  overflow: visible
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+  border-style: 0;
+  padding: 0
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button:-moz-focusring {
+  outline: 1px dotted ButtonText
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+  -webkit-appearance: button
+}
+
+button, select {
+  text-transform: none
+}
+
+button, input, select, textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none
+}
+
+select::-ms-expand {
+  display: none
+}
+
+select::-ms-value {
+  color: currentColor
+}
+
+legend {
+  border: 0;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px
+}
+
+img {
+  border-style: none
+}
+
+progress {
+  vertical-align: baseline
+}
+
+svg:not(:root) {
+  overflow: hidden
+}
+
+audio, canvas, progress, video {
+  display: inline-block
+}
+
+@media screen {
+  [hidden~=screen] {
+    display: inherit
+  }
+  [hidden~=screen]:not(:active):not(:focus):not(:target) {
+    position: absolute!important;
+    clip: rect(0 0 0 0)!important
+  }
+}
+
+[aria-busy=true] {
+  cursor: progress
+}
+
+[aria-controls] {
+  cursor: pointer
+}
+
+[aria-disabled] {
+  cursor: default
+}
+
+::-moz-selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none
+}
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none
+}
+
 .App {
+  min-height: 100vh;
+  font-family: 'Smooth Papyrus Demo', papyrus, cursive, serif;
+  padding: 30px 0;
+  color: #19153e;
+}
+
+.search-form {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+[class^=search-b] {
+  height: 65px;
+  font-size: 25px;
+}
+
+.search-bar {
+  width: 50%;
+  border: none;
+  padding: 10px;
+  background: #F5F4F1;
+  border-radius: 10px 0 0 10px;
+}
+
+.search-button {
+  background: #6C6B54;
+  border: none;
+  padding: 10px 20px;
+  color: #F5F4F1;
+  border-radius: 0 10px 10px 0;
+}
+
+.loading, .greeting {
+  color: rgb(124, 60, 37);
+  color: #F5F4F1;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.greeting h1 {
+  font-weight: 100;
+  font-family: 'Smooth Papyrus Demo',papyrus;
+  font-size: 2.2rem;
+}
+
+.recipe-data {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.ingredient-text {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.card-content-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-image-case {
+  display: block;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding: 56.25% 0 0 0;
+  overflow: hidden;
+}
+
+.card-image-case img {
+  position: absolute;
+  display: block;
+  max-width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.card-info.ingredient-info {
+  display: block;
+  width: 85%;
+  margin: 20px auto 15px;
+  flex-grow: 1;
+}
+
+.card-title {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.load-more-btn {
+  font-size: 1.3rem;
+  color: #F5F4F1;
+  text-decoration: none;
+  background: #6C6B54;
+  display: block;
+  width: 40%;
+  text-align: center;
+  padding: 10px 0;
+  margin: 15px auto 0;
+  border-radius: 7px;
+  margin-bottom: 40px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-button:focus, .search-bar:focus {
+  outline: none;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:400px) {
+  .search-bar {
+    width: 70%;
+    height: 50px;
   }
-  to {
-    transform: rotate(360deg);
+  .search-button {
+    height: 50px;
+    padding: 5px;
+  }
+  [class^=search-b] {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width:620px) {
+  .search-bar {
+    width: 70%;
+    height: 50px;
+  }
+  .search-button {
+    height: 50px;
+    padding: 5px;
+  }
+  [class^=search-b] {
+    height: 50px;
+    font-size: 16px;
   }
 }
